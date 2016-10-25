@@ -1,0 +1,19 @@
+{
+  "name": "xinran/laravel-easyapidoc",
+  "description": "laravel-easyapidoc",
+  "type": "library",
+  "homepage": "http://xinran.net",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "xinran",
+      "email": "xinranmi@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "XinRan\\": "src/"
+    }
+  }
+}
