@@ -4,8 +4,8 @@
  * EasyApiDoc for laravel
  * @author: xinran
  * @email: xinranmi@gmail.com
- * @created: 2016-10-21 10:14
- * @updated: 2016-10-21 10:14
+ * @created: 2016-10-21 10:20
+ * @updated: 2016-10-21 10:20
  * @logs:
  */
 
@@ -47,6 +47,11 @@ class EasyApiDoc
         $this->path = $filePath;
     }
 
+    /**
+     * 获取文档
+     * @param int $type(1公共方法 2表示公共和保护 3表示全部)
+     * @return array|\Illuminate\View\View|string
+     */
     public function getApiDoc($type = 1)
     {
         $api = $this->getApi($type);
@@ -65,6 +70,11 @@ class EasyApiDoc
         return View::file($view, ['apis' => $api, 'group' => $group]);
     }
 
+    /**
+     * 获取api
+     * @param int $type(1公共方法 2表示公共和保护 3表示全部)
+     * @return array|string
+     */
     public function getApi($type = 1)
     {
         $this->class = $this->getAllPathFile();
