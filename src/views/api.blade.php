@@ -78,6 +78,17 @@
             font-size: 8px;
             color: black;
         }
+
+        #menu {
+            position: fixed;
+            z-index: 999;
+            background-color: white;
+            width: 100%;
+        }
+
+        #page1, #page2 {
+            padding-top: 42px;
+        }
     </style>
 </head>
 <body>
@@ -229,7 +240,7 @@
         init: function () {
             ui.$page2.show();
             ui.$page1.hide();
-            ui.$menu.hide();
+            //ui.$menu.hide();
             this.listen();
             this.data = this.getData(data);
             //this.toggleShow();
