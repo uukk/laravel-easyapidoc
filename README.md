@@ -20,20 +20,14 @@ laravel-easyapidoc 适用于当前最流行的 Laravel 框架的一个扩展库.
 
 1、添加路由
 
-    Route::get('api', 'ApiController@easyApiDoc');
-    
-2、easyApiDoc 方法
-
-    public function easyApiDoc()
-    {
-        $doc = new EasyApiDoc();
-
+    Route::get('api', function () {
+        $doc = new \XinRan\EasyApiDoc();
         return $doc->getApiDoc();
-    }
+    });
     
-3、在你需要写注释的方法上面写注释
+2、在你需要写注释的方法上面写注释
     
-4、地址加上 api 就可以访问了    
+3、地址加上 api 就可以访问了    
     
 
 ## 其它
@@ -41,7 +35,10 @@ laravel-easyapidoc 适用于当前最流行的 Laravel 框架的一个扩展库.
 如果接口只在特定环境下访问
 
     if (app()->environment('local')) {
-       Route::get('api', 'ApiController@easyApiDoc');
+       Route::get('api', function () {
+           $doc = new \XinRan\EasyApiDoc();
+           return $doc->getApiDoc();
+       });
     }
         
 ## 注释参数说明
